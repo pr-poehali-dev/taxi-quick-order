@@ -1,0 +1,33 @@
+{
+  "tests": [
+    {
+      "name": "Admin login with valid credentials",
+      "method": "POST",
+      "path": "/?action=login",
+      "body": {
+        "username": "admin",
+        "password": "admin123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "admin": {
+          "username": "string",
+          "balance": "number"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get system stats",
+      "method": "GET",
+      "path": "/?action=stats",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "total_users": "number",
+        "admin_balance": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
