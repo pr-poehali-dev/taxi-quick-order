@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "name": "Get passenger balance",
+      "method": "GET",
+      "path": "/?user_id=1&role=passenger",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "bonus": "number",
+        "rub": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Get user orders",
+      "method": "GET",
+      "path": "/?user_id=1&role=passenger",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "orders": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

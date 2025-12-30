@@ -1,0 +1,46 @@
+{
+  "tests": [
+    {
+      "name": "Register new passenger",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "register",
+        "phone": "+79991234567",
+        "password": "testpass123",
+        "role": "passenger",
+        "full_name": "Тестовый Пассажир"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string",
+        "user": {
+          "id": "number",
+          "phone": "string",
+          "role": "string"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login with valid credentials",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "login",
+        "phone": "+79991234567",
+        "password": "testpass123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "user": {
+          "phone": "string",
+          "role": "string"
+        }
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
